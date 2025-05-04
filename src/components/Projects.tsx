@@ -3,6 +3,21 @@ import { FolderGit2, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    title: "Papers, Please",
+    description: "Improved archive for MIT Manipal past papers.",
+    url: "https://papers.000196.xyz/"
+  },
+  {
+    title: "English-to-Bhojpuri Translator",
+    description: "mBART model trained on a custom-built dataset.",
+    url: "https://github.com/NilayShenai/English-to-Bhojpuri-Translator"
+  },
+  {
+    title: "MehuLinux",
+    description: "Lightweight Linux-From-Scratch system with a minimal setup.",
+    url: "https://github.com/NilayShenai/MehuLinux"
+  },
+  {
     title: "BiGaSS",
     description: "Bidirectional Gapping Swap Sort algorithm.",
     url: "https://github.com/NilayShenai/BiGaSS"

@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
-import { Footer } from "@/components/Footer"; // Import the Footer component
+// Removed Footer import
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <About />
       <Skills /> {/* Moved Skills before Projects */}
       <Projects />
-      <Footer /> {/* Add the Footer component */}
+      {/* Removed Footer component */}
     </main>
   );
 }
