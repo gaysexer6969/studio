@@ -81,5 +81,5 @@
 
 /* Gradient for main background */
 .main-gradient {
-  @apply bg-gradient-to-b from-background to-[hsl(220,25%,10%)]; /* Adjusted end color slightly */
+  @apply bg-gradient-to-b from-background to-[hsl(220,25%,8%)]; /* Adjusted end color slightly darker */
 }
