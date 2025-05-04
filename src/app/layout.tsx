@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-// QueryClient related imports removed as they were commented out and causing hydration errors previously
+import { GithubPagesRedirect } from '@/components/GithubPagesRedirect'; // Import the redirect component
 
 // Determine basePath and host based on environment for metadata
 const isProd = process.env.NODE_ENV === 'production';
@@ -37,8 +37,6 @@ export const metadata: Metadata = {
   },
 };
 
-// QueryClient setup removed
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,7 +51,6 @@ export default function RootLayout({
           GeistSans.variable // Removed GeistMono.variable as font is not used
         )}
       >
-        {/* QueryClientProvider removed */}
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -61,12 +58,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TooltipProvider>
+            {/* Add the redirect component here. It needs to be within providers that use client hooks like useSearchParams */}
+            <GithubPagesRedirect />
             {children}
             <Toaster />
             <SonnerToaster />
           </TooltipProvider>
         </ThemeProvider>
-        {/* QueryClientProvider removed */}
       </body>
     </html>
   );

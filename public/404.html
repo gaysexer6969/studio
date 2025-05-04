@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Single Page Apps for GitHub Pages /w basePath support
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    // Handles navigation transitions (e.g. clicks) and 404s for SPAs.
+
+    (function() {
+      const basePath = '/nilayshenai'; // Must match basePath in next.config.js
+      const path = location.pathname;
+
+      // Check if the path starts with the basePath
+      if (path.startsWith(basePath)) {
+        // Extract the path part *after* the basePath
+        // e.g., if path is '/nilayshenai/about', pathWithoutBase becomes '/about'
+        // e.g., if path is '/nilayshenai', pathWithoutBase becomes '/'
+        const pathWithoutBase = path.substring(basePath.length) || '/';
+
+        // Construct the redirect URL: origin + basePath + query param 'p' + original search + original hash
+        // Example: https://nilayshenai.github.io/nilayshenai/?p=%2Fabout
+        const redirectUrl = `${location.origin}${basePath}/?p=${encodeURIComponent(pathWithoutBase)}${location.search}${location.hash}`;
+
+        // Redirect using replace to avoid polluting history
+        location.replace(redirectUrl);
+      } else {
+        // If the path does *not* start with the basePath, something is wrong,
+        // maybe redirect to the base path root or show a simpler error.
+        // For simplicity, we'll redirect to the basePath root.
+        const redirectUrl = `${location.origin}${basePath}/`;
+         location.replace(redirectUrl);
+      }
+    })();
+
+  </script>
+</head>
+<body>
+  If you are not redirected automatically, please wait a moment or click <a id="redirect-link" href="#">here</a>.
+  <script>
+    // Set the href for the fallback link (optional, good practice)
+    // Note: The main script runs location.replace immediately, so this might not be strictly necessary
+    // unless the user has scripts disabled initially.
+    const fallbackLink = document.getElementById('redirect-link');
+    if (fallbackLink) {
+      const basePath = '/nilayshenai';
+      const pathWithoutBase = location.pathname.startsWith(basePath)
+                              ? (location.pathname.substring(basePath.length) || '/')
+                              : '/'; // Default to root if basePath is missing
+       fallbackLink.href = `${location.origin}${basePath}/?p=${encodeURIComponent(pathWithoutBase)}${location.search}${location.hash}`;
+    }
+  </script>
+</body>
+</html>

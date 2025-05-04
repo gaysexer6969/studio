@@ -9,8 +9,8 @@ export default function Home() {
     <main className="min-h-screen text-foreground antialiased main-gradient">
       <Hero />
       <About />
+      <Skills /> {/* Moved Skills before Projects */}
       <Projects />
-      <Skills />
     </main>
   );
 }
