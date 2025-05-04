@@ -1,5 +1,5 @@
 import { Section } from "./ui/section";
-import { FolderOpen, ArrowUpRight } from "lucide-react";
+import { FolderGit2, ArrowUpRight } from "lucide-react"; // Changed icon
 
 const projects = [
   {
@@ -24,7 +24,8 @@ export const Projects = () => {
     <Section id="projects" className="py-16 bg-transparent">
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center mb-8">
         <div className="flex flex-col items-center gap-2 text-center">
-          <FolderOpen className="h-9 w-9 mb-2 text-primary" />
+          {/* Updated icon and ensure primary color */}
+          <FolderGit2 className="h-9 w-9 mb-2 text-primary" />
           <h2 className="text-2xl font-bold mb-1">Projects</h2>
           <hr className="w-16 border-t border-border my-1 mx-auto" /> {/* Use border-border */}
         </div>
@@ -40,10 +41,12 @@ export const Projects = () => {
           >
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <FolderOpen className="w-4 h-4 text-primary opacity-80" />
-                <span className="font-semibold">{project.title}</span> {/* Removed text-white, inherits */}
+                {/* Use same icon for consistency, primary color */}
+                <FolderGit2 className="w-4 h-4 text-primary opacity-80" />
+                <span className="font-semibold">{project.title}</span> {/* Inherits text color */}
               </span>
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground" /> {/* Use muted-foreground */}
+              {/* Keep ArrowUpRight, use muted-foreground */}
+              <ArrowUpRight className="w-4 h-4 text-muted-foreground" />
             </div>
             <span className="text-muted-foreground text-sm">{project.description}</span> {/* Use muted-foreground */}
           </a>

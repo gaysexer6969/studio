@@ -1,24 +1,23 @@
 import { Section } from "./ui/section";
-import { Code, CircleDot } from "lucide-react";
+import { Code, CircleDot, Database, Container, Table, Cog, Bot, BrainCircuit } from "lucide-react"; // Added more specific icons
 
 const skills = [
-  "Rust", "Python", "Node.js", "TensorFlow", // Corrected casing
-  "MongoDB", "PostgreSQL", "Pandas", "Docker" // Corrected casing
+  "Rust", "Python", "Node.js", "TensorFlow",
+  "MongoDB", "PostgreSQL", "Pandas", "Docker"
 ];
 
 // Define icons using lucide components where possible, fallback gracefully
 // Using CircleDot as a generic placeholder if a specific icon isn't available or suitable
+// Use muted-foreground for consistent icon color within the skill boxes
 const skillIcons: Record<string, React.ReactNode> = {
-  Rust: <CircleDot className="h-4 w-4 text-orange-500" />, // Example color, consider theme vars if needed
-  Python: <CircleDot className="h-4 w-4 text-blue-500" />,
-  "Node.js": <CircleDot className="h-4 w-4 text-green-500" />,
-  TensorFlow: <CircleDot className="h-4 w-4 text-orange-600" />,
-  MongoDB: <CircleDot className="h-4 w-4 text-green-600" />,
-  PostgreSQL: <CircleDot className="h-4 w-4 text-blue-700" />,
-  Pandas: <CircleDot className="h-4 w-4 text-indigo-400" />,
-  Docker: <CircleDot className="h-4 w-4 text-blue-400" />
-  // Consider adding more specific icons from lucide-react if available and appropriate
-  // e.g., Database for PostgreSQL/MongoDB, Container for Docker
+  Rust: <Cog className="h-4 w-4 text-muted-foreground" />, // Using Cog for Rust
+  Python: <Bot className="h-4 w-4 text-muted-foreground" />, // Placeholder for Python
+  "Node.js": <CircleDot className="h-4 w-4 text-muted-foreground" />, // Placeholder
+  TensorFlow: <BrainCircuit className="h-4 w-4 text-muted-foreground" />, // Using BrainCircuit for TF
+  MongoDB: <Database className="h-4 w-4 text-muted-foreground" />, // Using Database
+  PostgreSQL: <Database className="h-4 w-4 text-muted-foreground" />, // Using Database
+  Pandas: <Table className="h-4 w-4 text-muted-foreground" />, // Using Table for Pandas
+  Docker: <Container className="h-4 w-4 text-muted-foreground" /> // Using Container for Docker
 };
 
 export const Skills = () => {
@@ -26,6 +25,7 @@ export const Skills = () => {
     <Section id="skills" className="py-16 bg-transparent">
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center mb-8">
         <div className="flex flex-col items-center gap-2 text-center">
+          {/* Ensure Code icon uses primary color */}
           <Code className="h-9 w-9 mb-2 text-primary" />
           <h2 className="text-2xl font-bold mb-1">Skills</h2>
           <hr className="w-16 border-t border-border my-1 mx-auto" /> {/* Use border-border */}
