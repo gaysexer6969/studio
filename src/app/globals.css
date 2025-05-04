@@ -5,46 +5,46 @@
 @layer base {
   :root {
     /* Slightly Lighter Dark Theme - Adjusted with Teal Accent for Hover Outline */
-    --background: 220 25% 14%; /* Slightly lighter background */
+    --background: 220 25% 16%; /* Adjusted: Slightly lighter start for gradient */
     --foreground: 210 20% 95%; /* Slightly brighter foreground */
 
-    --card: 220 25% 17%; /* Lighter card background */
+    --card: 220 25% 19%; /* Adjusted: Lighter card background */
     --card-foreground: 210 20% 95%; /* Match foreground */
 
-    --popover: 220 25% 12%; /* Keep popover dark */
+    --popover: 220 25% 10%; /* Adjusted: Darker popover, matches gradient end */
     --popover-foreground: 210 20% 95%; /* Match foreground */
 
     --primary: 210 20% 95%; /* Match foreground */
-    --primary-foreground: 220 25% 22%; /* Darker primary foreground for contrast */
+    --primary-foreground: 220 25% 24%; /* Adjusted: Darker primary foreground for contrast */
 
-    --secondary: 215 20% 28%; /* Lighter, less saturated secondary */
+    --secondary: 215 20% 30%; /* Adjusted: Lighter, less saturated secondary */
     --secondary-foreground: 210 20% 95%; /* Match foreground */
 
-    --muted: 215 20% 25%; /* Slightly lighter muted */
+    --muted: 215 20% 27%; /* Adjusted: Slightly lighter muted */
     --muted-foreground: 215 15% 70%; /* Lighter muted text */
 
-    /* Teal accent used primarily for hover outlines now */
+    /* Teal accent used primarily for hover outlines */
     --accent: 170 40% 50%;
-    /* Accent foreground remains bright for potential future use, but not primary hover target */
+    /* Accent foreground remains bright */
     --accent-foreground: 210 20% 98%;
 
     --destructive: 0 60% 50%; /* Standard destructive red */
     --destructive-foreground: 210 20% 98%; /* Bright text on destructive */
 
-    --border: 215 20% 25%; /* Match muted background */
-    --input: 215 20% 25%; /* Match muted background */
+    --border: 215 20% 27%; /* Adjusted: Match muted background */
+    --input: 215 20% 27%; /* Adjusted: Match muted background */
     --ring: 170 40% 70%; /* Lighter teal ring color for focus */
 
     --radius: 0.5rem;
 
     /* Sidebar variables updated to match new theme */
-    --sidebar-background: 220 25% 14%;
+    --sidebar-background: 220 25% 16%; /* Adjusted: Match new background */
     --sidebar-foreground: 210 20% 95%;
     --sidebar-primary: 210 20% 95%;
-    --sidebar-primary-foreground: 220 25% 22%;
+    --sidebar-primary-foreground: 220 25% 24%; /* Adjusted: Match new primary-foreground */
     --sidebar-accent: 170 40% 50%; /* Teal accent for sidebar */
     --sidebar-accent-foreground: 210 20% 98%; /* Bright text on sidebar accent */
-    --sidebar-border: 215 20% 25%;
+    --sidebar-border: 215 20% 27%; /* Adjusted: Match new border */
     --sidebar-ring: 170 40% 70%; /* Teal ring for sidebar */
   }
 
@@ -83,7 +83,8 @@
 
 /* Gradient for main background */
 .main-gradient {
-  @apply bg-gradient-to-b from-background to-[hsl(220,25%,8%)]; /* Adjusted end color slightly darker */
+  /* Smooth gradient from lighter top (background) to slightly darker bottom */
+  @apply bg-gradient-to-b from-background to-[hsl(220,25%,10%)];
 }
 
 /* Ensure badge outline variant hover uses accent border */
