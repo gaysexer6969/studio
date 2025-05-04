@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+import { GeistMono } from 'geist/font/mono'; // Ensure this font is correctly installed/imported
 import './globals.css';
 import { cn } from "@/lib/utils";
 import { Header } from '@/components/Header';
@@ -17,7 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("!scroll-smooth", GeistSans.variable, GeistMono.variable)}>
+    <html
+      lang="en"
+      className={cn("!scroll-smooth", GeistSans.variable, GeistMono.variable)}
+      suppressHydrationWarning // Add this prop
+    >
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
