@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Slightly Lighter Dark Theme - Adjusted with Teal Accent */
+    /* Slightly Lighter Dark Theme - Adjusted with Teal Accent for Hover Outline */
     --background: 220 25% 14%; /* Slightly lighter background */
     --foreground: 210 20% 95%; /* Slightly brighter foreground */
 
@@ -23,15 +23,17 @@
     --muted: 215 20% 25%; /* Slightly lighter muted */
     --muted-foreground: 215 15% 70%; /* Lighter muted text */
 
-    --accent: 170 40% 50%; /* Teal accent */
-    --accent-foreground: 210 20% 98%; /* Bright text on accent */
+    /* Teal accent used primarily for hover outlines now */
+    --accent: 170 40% 50%;
+    /* Accent foreground remains bright for potential future use, but not primary hover target */
+    --accent-foreground: 210 20% 98%;
 
     --destructive: 0 60% 50%; /* Standard destructive red */
     --destructive-foreground: 210 20% 98%; /* Bright text on destructive */
 
     --border: 215 20% 25%; /* Match muted background */
     --input: 215 20% 25%; /* Match muted background */
-    --ring: 170 40% 70%; /* Lighter teal ring color */
+    --ring: 170 40% 70%; /* Lighter teal ring color for focus */
 
     --radius: 0.5rem;
 
@@ -82,4 +84,12 @@
 /* Gradient for main background */
 .main-gradient {
   @apply bg-gradient-to-b from-background to-[hsl(220,25%,8%)]; /* Adjusted end color slightly darker */
+}
+
+/* Ensure badge outline variant hover uses accent border */
+@layer components {
+  .badge-outline:hover {
+    @apply border-accent; /* Apply teal border on hover */
+    /* No background or text color change here */
+  }
 }

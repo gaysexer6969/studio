@@ -53,7 +53,7 @@ export const Projects = () => {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-border rounded-md px-4 py-3 flex flex-col gap-1 transition-all duration-150 ease-in-out hover:bg-accent hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-card-foreground group hover:scale-105 transform" // Added hover:scale-105 and transform
+            className="border border-border rounded-md px-4 py-3 flex flex-col gap-1 transition-all duration-150 ease-in-out hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-card-foreground group hover:scale-105 transform" // Removed hover:bg-accent, kept hover:border-accent and hover:scale-105
           >
             {/* Simplified project card content */}
             <div className="flex items-center justify-between">

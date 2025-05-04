@@ -36,7 +36,7 @@ export const Skills = () => {
           <Badge
             key={skill}
             variant="outline" // Use outline variant for subtle border and themed hover
-            className="flex items-center justify-center px-4 py-2 text-sm text-foreground transition-all duration-200 ease-in-out hover:scale-105 hover:bg-accent hover:text-accent-foreground cursor-default shadow-sm hover:shadow-md" // Added padding, hover scale, shadow
+            className="flex items-center justify-center px-4 py-2 text-sm text-foreground transition-all duration-200 ease-in-out hover:scale-105 hover:border-accent cursor-default shadow-sm hover:shadow-md" // Updated hover: only border-accent
           >
             {/* Robust icon handling: Fallback to CircleDot if specific icon is missing */}
             {skillIcons[skill] ?? <CircleDot className="h-4 w-4 mr-1.5 text-muted-foreground" />}
