@@ -9,18 +9,25 @@ import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 // QueryClient related imports removed as they were commented out and causing hydration errors previously
 
+// Determine basePath and host based on environment for metadata
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'nilayshenai'; // Adjust if your repository name is different
+const basePath = isProd ? `/${repoName}` : '';
+const host = isProd ? 'https://nilayshenai.github.io' : 'http://localhost:3000'; // Adjust localhost if needed
+
 export const metadata: Metadata = {
   title: 'nilayshenai',
   description: 'portfolio',
-  metadataBase: new URL('https://nilayshenai.github.io'), // Set base URL for OG images
+  metadataBase: new URL(host), // Set base URL for OG images using dynamic host
   openGraph: {
     title: 'nilayshenai',
     description: 'portfolio',
-    url: 'https://nilayshenai.github.io/nilayshenai/', // Ensure this matches your deployment path if using gh-pages subdir
+    url: `${host}${basePath}/`, // Use dynamic host and basePath for the canonical URL
     siteName: 'nilayshenai',
     images: [
       {
-        url: 'https://media.discordapp.net/attachments/932211798390734898/1363250767775142119/original-44db511d7d05ef1d65a8212c806bf925.png?ex=680559b7&is=68040837&hm=532b87a36c3004d1703fd6cb15092b5e0e7bea1679c7a0ffa36c1a49db67626c&=&format=webp&quality=lossless', // Must be absolute URL
+        // Ensure the image URL is absolute and correctly points to the hosted image
+        url: 'https://media.discordapp.net/attachments/932211798390734898/1363250767775142119/original-44db511d7d05ef1d65a8212c806bf925.png?ex=680559b7&is=68040837&hm=532b87a36c3004d1703fd6cb15092b5e0e7bea1679c7a0ffa36c1a49db67626c&=&format=webp&quality=lossless', // This absolute URL should work
         width: 1200, // Optional
         height: 630, // Optional
       },
