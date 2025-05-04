@@ -1,4 +1,6 @@
-import { useToast } from "@/hooks/use-toast"
+"use client"; // Ensure this runs on the client
+
+import { useToast } from "@/hooks/use-toast";
 import {
   Toast,
   ToastClose,
@@ -6,10 +8,23 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@/components/ui/toast"
+} from "@/components/ui/toast";
+import React, { useEffect, useState } from 'react'; // Import useEffect and useState
 
 export function Toaster() {
-  const { toasts } = useToast()
+  const { toasts } = useToast();
+  const [mounted, setMounted] = useState(false); // State to track mounting
+
+  // Ensure this runs only on the client after hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+     // Render nothing or a placeholder on the server/during hydration
+    return null;
+  }
+
 
   return (
     <ToastProvider>

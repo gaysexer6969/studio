@@ -1,3 +1,5 @@
+"use client"; // Add this directive for client-side interactions
+
 import { ArrowDown, Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import { Section } from "./ui/section";
@@ -13,7 +15,7 @@ export const Hero = () => {
           A normal CS aficionado.
         </p>
       </div>
-      
+
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 animate-fade-in" style={{ animationDelay: "200ms" }}>
         <Button
           variant="outline"
@@ -24,7 +26,7 @@ export const Hero = () => {
           Learn More
           <ArrowDown className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-1" />
         </Button>
-        
+
         <div className="flex gap-3">
           <Button
             variant="outline"
@@ -32,7 +34,7 @@ export const Hero = () => {
             className="bg-white/10 border-white/20 hover:bg-white/20 text-white transform transition-all duration-300 hover:scale-105"
             asChild
           >
-            <a href="https://github.com/NilayShenai" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/NilayShenai" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
               <Github className="h-5 w-5" />
             </a>
           </Button>
@@ -42,7 +44,7 @@ export const Hero = () => {
             className="bg-white/10 border-white/20 hover:bg-white/20 text-white transform transition-all duration-300 hover:scale-105"
             asChild
           >
-            <a href="https://www.linkedin.com/in/nilay-shenai-7b5211183/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/nilay-shenai-7b5211183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
               <Linkedin className="h-5 w-5" />
             </a>
           </Button>

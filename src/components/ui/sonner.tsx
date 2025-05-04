@@ -1,10 +1,24 @@
-import { useTheme } from "next-themes"
-import { Toaster as Sonner, toast } from "sonner"
+"use client"; // Ensure this runs on the client
 
-type ToasterProps = React.ComponentProps<typeof Sonner>
+import { useTheme } from "next-themes";
+import { Toaster as Sonner, toast } from "sonner";
+import React, { useEffect, useState } from "react"; // Import useEffect and useState
+
+type ToasterProps = React.ComponentProps<typeof Sonner>;
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme()
+  const { theme = "system" } = useTheme();
+  const [mounted, setMounted] = useState(false); // State to track mounting
+
+  // Ensure this runs only on the client after hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // Render nothing or a placeholder on the server/during hydration
+    return null;
+  }
 
   return (
     <Sonner
@@ -23,7 +37,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       }}
       {...props}
     />
-  )
-}
+  );
+};
 
-export { Toaster, toast }
+export { Toaster, toast };
