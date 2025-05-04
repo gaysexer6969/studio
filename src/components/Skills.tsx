@@ -13,10 +13,10 @@ const skills = [
 const skillIcons: Record<string, React.ReactNode> = {
   Rust: <Cog className="h-4 w-4 mr-1.5 text-muted-foreground" />, // Added margin
   Python: <Bot className="h-4 w-4 mr-1.5 text-muted-foreground" />,
-  "Node.js": <CircleDot className="h-4 w-4 mr-1.5 text-muted-foreground" />,
+  "Node.js": <CircleDot className="h-4 w-4 mr-1.5 text-muted-foreground" />, // Using CircleDot as Node.js doesn't have a direct Lucide icon
   TensorFlow: <BrainCircuit className="h-4 w-4 mr-1.5 text-muted-foreground" />,
-  MongoDB: <Database className="h-4 w-4 mr-1.5 text-muted-foreground" />,
-  PostgreSQL: <Database className="h-4 w-4 mr-1.5 text-muted-foreground" />,
+  MongoDB: <Database className="h-4 w-4 mr-1.5 text-muted-foreground" />, // Generic Database icon
+  PostgreSQL: <Database className="h-4 w-4 mr-1.5 text-muted-foreground" />, // Generic Database icon
   Pandas: <Table className="h-4 w-4 mr-1.5 text-muted-foreground" />,
   Docker: <Container className="h-4 w-4 mr-1.5 text-muted-foreground" />
 };
@@ -38,7 +38,7 @@ export const Skills = () => {
           <Badge
             key={skill}
             variant="outline" // Use outline variant for consistency
-            className="flex items-center justify-center px-3 py-1.5 text-sm text-foreground transition-colors hover:bg-accent hover:text-accent-foreground cursor-default shadow-sm" // Adjusted padding and added shadow
+            className="flex items-center justify-center px-3 py-1.5 text-sm text-foreground transition-colors hover:bg-accent hover:text-accent-foreground cursor-default" // Removed shadow-sm for a flatter look
           >
             {/* Robust icon handling: Fallback to CircleDot if specific icon is missing */}
             {skillIcons[skill] ?? <CircleDot className="h-4 w-4 mr-1.5 text-muted-foreground" />}
