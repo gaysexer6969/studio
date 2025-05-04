@@ -33,38 +33,19 @@
     --ring: 215 20.2% 65.1%; /* Grayish Blue for focus rings */
 
     --radius: 0.5rem;
+
+    /* Sidebar specific variables (assuming defaults match theme for now) */
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 217.2 32.6% 25.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 215 20.2% 65.1%;
   }
 
-  .dark {
-    /* Keep dark theme same as root for now */
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 6.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 25.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 215 20.2% 65.1%;
-  }
+  /* Removed redundant .dark definition as it was identical to :root */
 }
 
 @layer base {
@@ -87,3 +68,12 @@
   animation: fade-in 0.5s ease-out forwards;
 }
 
+/* Caret blink animation for OTP input */
+@keyframes caret-blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.animate-caret-blink {
+  animation: caret-blink 1.2s infinite ease-out;
+}

@@ -20,7 +20,8 @@ export const Hero = () => {
         <Button
           variant="outline"
           size="lg"
-          className="group bg-white/10 border-white/20 hover:bg-white/20 text-white transform transition-all duration-300 hover:scale-105"
+          // Removed custom bg/border classes, relying on theme's outline variant
+          className="group text-white transform transition-all duration-300 hover:scale-105"
           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
         >
           Learn More
@@ -31,7 +32,8 @@ export const Hero = () => {
           <Button
             variant="outline"
             size="icon"
-            className="bg-white/10 border-white/20 hover:bg-white/20 text-white transform transition-all duration-300 hover:scale-105"
+            // Removed custom bg/border classes, relying on theme's outline variant
+            className="text-white transform transition-all duration-300 hover:scale-105"
             asChild
           >
             <a href="https://github.com/NilayShenai" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
@@ -41,7 +43,8 @@ export const Hero = () => {
           <Button
             variant="outline"
             size="icon"
-            className="bg-white/10 border-white/20 hover:bg-white/20 text-white transform transition-all duration-300 hover:scale-105"
+            // Removed custom bg/border classes, relying on theme's outline variant
+            className="text-white transform transition-all duration-300 hover:scale-105"
             asChild
           >
             <a href="https://www.linkedin.com/in/nilay-shenai-7b5211183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">

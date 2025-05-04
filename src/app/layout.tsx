@@ -1,22 +1,22 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+// import { GeistMono } from 'geist/font/mono'; // Removed as it was causing issues previously
 import './globals.css';
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// QueryClient related imports removed as they were commented out and causing hydration errors previously
 
 export const metadata: Metadata = {
   title: 'nilayshenai',
   description: 'portfolio',
-   metadataBase: new URL('https://nilayshenai.github.io'), // Set base URL for OG images
+  metadataBase: new URL('https://nilayshenai.github.io'), // Set base URL for OG images
   openGraph: {
     title: 'nilayshenai',
     description: 'portfolio',
-    url: 'https://nilayshenai.github.io/nilayshenai/',
+    url: 'https://nilayshenai.github.io/nilayshenai/', // Ensure this matches your deployment path if using gh-pages subdir
     siteName: 'nilayshenai',
     images: [
       {
@@ -30,8 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Create a client
-const queryClient = new QueryClient();
+// QueryClient setup removed
 
 export default function RootLayout({
   children,
@@ -39,28 +38,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("!scroll-smooth", GeistSans.variable, GeistMono.variable)} suppressHydrationWarning>
+    // Added suppressHydrationWarning for robustness against minor mismatches
+    <html lang="en" className={cn("!scroll-smooth", GeistSans.variable)} suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          GeistSans.variable,
-           GeistMono.variable
+          GeistSans.variable // Removed GeistMono.variable as font is not used
         )}
       >
-       {/*<QueryClientProvider client={queryClient}> TODO: Fix hydration error with QueryClientProvider */}
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <TooltipProvider>
-              {children}
-              <Toaster />
-              <SonnerToaster />
-            </TooltipProvider>
-          </ThemeProvider>
-       {/* </QueryClientProvider> */}
+        {/* QueryClientProvider removed */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TooltipProvider>
+            {children}
+            <Toaster />
+            <SonnerToaster />
+          </TooltipProvider>
+        </ThemeProvider>
+        {/* QueryClientProvider removed */}
       </body>
     </html>
   );

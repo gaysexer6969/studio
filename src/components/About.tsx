@@ -5,15 +5,15 @@ export const About = () => {
   return (
     <Section
       id="about"
-      className="py-8 flex justify-center items-center bg-transparent"
+      className="py-8 flex justify-center items-center bg-transparent" // Removed redundant py-16 from Section's default
     >
       <div className="w-full max-w-xl mx-auto flex flex-col items-center">
         <div className="flex flex-col items-center gap-1 text-center">
           <User className="h-9 w-9 mb-2 text-primary" />
           <h2 className="text-2xl font-bold mb-1">About Me</h2>
-          <hr className="w-16 border-t border-gray-600 my-1 mx-auto" />
+          <hr className="w-16 border-t border-border my-1 mx-auto" /> {/* Use border-border */}
         </div>
-        <p className="text-gray-300 text-base leading-relaxed mt-4 text-center">
+        <p className="text-muted-foreground text-base leading-relaxed mt-4 text-center"> {/* Use text-muted-foreground */}
           I do weird shit.
         </p>
       </div>

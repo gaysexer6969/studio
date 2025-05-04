@@ -87,18 +87,23 @@ export default {
         'fade-in': {
            from: { opacity: '0', transform: 'translateY(10px)' },
            to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'caret-blink': { // Added caret blink animation
+           '0%, 50%, 100%': { opacity: '1' },
+           '25%, 75%': { opacity: '0' },
         }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in': 'fade-in 0.5s ease-out forwards',
+        'caret-blink': 'caret-blink 1.2s infinite ease-out', // Added caret blink animation
 			},
        fontFamily: {
-         sans: ['var(--font-geist-sans)'],
-         mono: ['var(--font-geist-mono)'],
+         sans: ['var(--font-geist-sans)'], // Ensure correct variable name if geist/font/sans is used
+         // mono: ['var(--font-geist-mono)'], // Ensure correct variable name if geist/font/mono is used
        },
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")], // Added typography plugin
 } satisfies Config;

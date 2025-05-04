@@ -26,7 +26,7 @@ export const Projects = () => {
         <div className="flex flex-col items-center gap-2 text-center">
           <FolderOpen className="h-9 w-9 mb-2 text-primary" />
           <h2 className="text-2xl font-bold mb-1">Projects</h2>
-          <hr className="w-16 border-t border-gray-600 my-1 mx-auto" />
+          <hr className="w-16 border-t border-border my-1 mx-auto" /> {/* Use border-border */}
         </div>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center px-2">
@@ -36,16 +36,16 @@ export const Projects = () => {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-gray-700 rounded-md px-4 py-3 flex flex-col gap-2 transition-all duration-150 ease-in-out hover:bg-white/10 hover:scale-[1.03] hover:border-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="border border-border rounded-md px-4 py-3 flex flex-col gap-2 transition-all duration-150 ease-in-out hover:bg-accent hover:border-accent-foreground hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-card-foreground" // Use theme colors
           >
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2">
                 <FolderOpen className="w-4 h-4 text-primary opacity-80" />
-                <span className="font-semibold text-white">{project.title}</span>
+                <span className="font-semibold">{project.title}</span> {/* Removed text-white, inherits */}
               </span>
-              <ArrowUpRight className="w-4 h-4 text-gray-400" />
+              <ArrowUpRight className="w-4 h-4 text-muted-foreground" /> {/* Use muted-foreground */}
             </div>
-            <span className="text-gray-400 text-sm">{project.description}</span>
+            <span className="text-muted-foreground text-sm">{project.description}</span> {/* Use muted-foreground */}
           </a>
         ))}
       </div>
