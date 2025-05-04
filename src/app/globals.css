@@ -4,46 +4,46 @@
 
 @layer base {
   :root {
-    /* Lighter Color Scheme */
-    --background: 220 30% 12%; /* Lighter, slightly desaturated blue-gray */
-    --foreground: 210 20% 94%; /* Slightly less bright white */
+    /* Slightly Lighter Dark Theme - Adjusted */
+    --background: 220 25% 14%; /* Slightly lighter background */
+    --foreground: 210 20% 95%; /* Slightly brighter foreground */
 
-    --card: 220 30% 15%; /* Lighter card background */
-    --card-foreground: 210 20% 94%; /* Match foreground */
+    --card: 220 25% 17%; /* Lighter card background */
+    --card-foreground: 210 20% 95%; /* Match foreground */
 
-    --popover: 220 30% 10%; /* Keep popover slightly darker */
-    --popover-foreground: 210 20% 94%; /* Match foreground */
+    --popover: 220 25% 12%; /* Keep popover dark */
+    --popover-foreground: 210 20% 95%; /* Match foreground */
 
-    --primary: 210 20% 94%; /* Match foreground */
-    --primary-foreground: 220 30% 20%; /* Ensure contrast */
+    --primary: 210 20% 95%; /* Match foreground */
+    --primary-foreground: 220 25% 22%; /* Darker primary foreground for contrast */
 
-    --secondary: 215 25% 25%; /* Lighter muted blue */
-    --secondary-foreground: 210 20% 94%; /* Match foreground */
+    --secondary: 215 20% 28%; /* Lighter, less saturated secondary */
+    --secondary-foreground: 210 20% 95%; /* Match foreground */
 
-    --muted: 215 25% 22%; /* Slightly darker muted */
-    --muted-foreground: 215 15% 65%; /* Lighter muted text */
+    --muted: 215 20% 25%; /* Slightly lighter muted */
+    --muted-foreground: 215 15% 70%; /* Lighter muted text */
 
-    --accent: 215 25% 35%; /* Lighter accent blue */
+    --accent: 215 20% 40%; /* Lighter, less saturated accent */
     --accent-foreground: 210 20% 98%; /* Keep accent text bright */
 
-    --destructive: 0 60% 45%; /* Slightly lighter red */
-    --destructive-foreground: 210 20% 98%; /* Keep destructive text bright */
+    --destructive: 0 60% 50%; /* Standard destructive red */
+    --destructive-foreground: 210 20% 98%; /* Bright text on destructive */
 
-    --border: 215 25% 22%; /* Match muted background */
-    --input: 215 25% 22%; /* Match muted background */
-    --ring: 215 20% 55%; /* Lighter ring color */
+    --border: 215 20% 25%; /* Match muted background */
+    --input: 215 20% 25%; /* Match muted background */
+    --ring: 215 20% 60%; /* Lighter ring color */
 
     --radius: 0.5rem;
 
-    /* Sidebar specific variables updated to match new theme */
-    --sidebar-background: 220 30% 12%;
-    --sidebar-foreground: 210 20% 94%;
-    --sidebar-primary: 210 20% 94%;
-    --sidebar-primary-foreground: 220 30% 20%;
-    --sidebar-accent: 215 25% 35%;
+    /* Sidebar variables updated to match new theme */
+    --sidebar-background: 220 25% 14%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 210 20% 95%;
+    --sidebar-primary-foreground: 220 25% 22%;
+    --sidebar-accent: 215 20% 40%;
     --sidebar-accent-foreground: 210 20% 98%;
-    --sidebar-border: 215 25% 22%;
-    --sidebar-ring: 215 20% 55%;
+    --sidebar-border: 215 20% 25%;
+    --sidebar-ring: 215 20% 60%;
   }
 
   /* Removed redundant .dark definition as it was identical to :root */
@@ -77,4 +77,9 @@
 
 .animate-caret-blink {
   animation: caret-blink 1.2s infinite ease-out;
+}
+
+/* Gradient for main background */
+.main-gradient {
+  @apply bg-gradient-to-b from-background to-[hsl(220,25%,10%)]; /* Adjusted end color slightly */
 }
