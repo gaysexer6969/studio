@@ -516,45 +516,46 @@ video {
   display: none;
 }
   :root {
-    --background: 222.2 84% 4.9%; /* Dark Blue-Gray */
-    --foreground: 210 40% 98%; /* Almost White */
+    /* Lighter Color Scheme */
+    --background: 220 30% 12%; /* Lighter, slightly desaturated blue-gray */
+    --foreground: 210 20% 94%; /* Slightly less bright white */
 
-    --card: 222.2 84% 6.9%; /* Slightly Lighter Dark Blue-Gray */
-    --card-foreground: 210 40% 98%;
+    --card: 220 30% 15%; /* Lighter card background */
+    --card-foreground: 210 20% 94%; /* Match foreground */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 30% 10%; /* Keep popover slightly darker */
+    --popover-foreground: 210 20% 94%; /* Match foreground */
 
-    --primary: 210 40% 98%; /* Almost White */
-    --primary-foreground: 222.2 47.4% 11.2%; /* Dark Blue-Gray */
+    --primary: 210 20% 94%; /* Match foreground */
+    --primary-foreground: 220 30% 20%; /* Ensure contrast */
 
-    --secondary: 217.2 32.6% 17.5%; /* Muted Blue */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 25% 25%; /* Lighter muted blue */
+    --secondary-foreground: 210 20% 94%; /* Match foreground */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%; /* Grayish Blue */
+    --muted: 215 25% 22%; /* Slightly darker muted */
+    --muted-foreground: 215 15% 65%; /* Lighter muted text */
 
-    --accent: 217.2 32.6% 25.5%; /* Slightly Brighter Muted Blue */
-    --accent-foreground: 210 40% 98%;
+    --accent: 215 25% 35%; /* Lighter accent blue */
+    --accent-foreground: 210 20% 98%; /* Keep accent text bright */
 
-    --destructive: 0 62.8% 30.6%; /* Dark Red */
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 60% 45%; /* Slightly lighter red */
+    --destructive-foreground: 210 20% 98%; /* Keep destructive text bright */
 
-    --border: 217.2 32.6% 17.5%; /* Muted Blue */
-    --input: 217.2 32.6% 17.5%;
-    --ring: 215 20.2% 65.1%; /* Grayish Blue for focus rings */
+    --border: 215 25% 22%; /* Match muted background */
+    --input: 215 25% 22%; /* Match muted background */
+    --ring: 215 20% 55%; /* Lighter ring color */
 
     --radius: 0.5rem;
 
-    /* Sidebar specific variables (assuming defaults match theme for now) */
-    --sidebar-background: 222.2 84% 4.9%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 210 40% 98%;
-    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
-    --sidebar-accent: 217.2 32.6% 25.5%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 215 20.2% 65.1%;
+    /* Sidebar specific variables updated to match new theme */
+    --sidebar-background: 220 30% 12%;
+    --sidebar-foreground: 210 20% 94%;
+    --sidebar-primary: 210 20% 94%;
+    --sidebar-primary-foreground: 220 30% 20%;
+    --sidebar-accent: 215 25% 35%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 25% 22%;
+    --sidebar-ring: 215 20% 55%;
   }
 
   /* Removed redundant .dark definition as it was identical to :root */
@@ -1349,16 +1350,6 @@ video {
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
-.from-\[\#1A1F2C\] {
-  --tw-gradient-from: #1A1F2C var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(26 31 44 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-white {
-  --tw-gradient-from: #fff var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
 .from-background {
   --tw-gradient-from: hsl(var(--background)) var(--tw-gradient-from-position);
   --tw-gradient-to: hsl(var(--background) / 0) var(--tw-gradient-to-position);
@@ -1369,19 +1360,9 @@ video {
   --tw-gradient-to: hsl(var(--foreground) / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.via-gray-200 {
-  --tw-gradient-to: rgb(229 231 235 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #e5e7eb var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
 .via-gray-300 {
   --tw-gradient-to: rgb(209 213 219 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #d1d5db var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-.to-\[\#121620\] {
-  --tw-gradient-to: #121620 var(--tw-gradient-to-position);
-}
-.to-gray-400 {
-  --tw-gradient-to: #9ca3af var(--tw-gradient-to-position);
 }
 .to-\[hsl\(222\.2\2c 84\%\2c 2\.9\%\)\] {
   --tw-gradient-to: hsl(222.2,84%,2.9%) var(--tw-gradient-to-position);
@@ -1615,10 +1596,6 @@ video {
 .text-foreground\/50 {
   color: hsl(var(--foreground) / 0.5);
 }
-.text-gray-300 {
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
-}
 .text-muted-foreground {
   color: hsl(var(--muted-foreground));
 }
@@ -1643,10 +1620,6 @@ video {
 .text-transparent {
   color: transparent;
 }
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
@@ -1665,9 +1638,6 @@ video {
 }
 .opacity-70 {
   opacity: 0.7;
-}
-.opacity-80 {
-  opacity: 0.8;
 }
 .opacity-90 {
   opacity: 0.9;
@@ -1961,16 +1931,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:scale-\[1\.03\]:hover {
-  --tw-scale-x: 1.03;
-  --tw-scale-y: 1.03;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:border-accent-foreground:hover {
-  border-color: hsl(var(--accent-foreground));
-}
-
 .hover\:border-accent:hover {
   border-color: hsl(var(--accent));
 }
@@ -2162,11 +2122,6 @@ video {
   opacity: 1;
 }
 
-.group:hover .group-hover\:translate-y-1 {
-  --tw-translate-y: 0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .group:hover .group-hover\:-translate-y-1 {
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2174,6 +2129,11 @@ video {
 
 .group:hover .group-hover\:translate-x-1 {
   --tw-translate-x: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:translate-y-1 {
+  --tw-translate-y: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 

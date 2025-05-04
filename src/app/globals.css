@@ -4,45 +4,46 @@
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%; /* Dark Blue-Gray */
-    --foreground: 210 40% 98%; /* Almost White */
+    /* Lighter Color Scheme */
+    --background: 220 30% 12%; /* Lighter, slightly desaturated blue-gray */
+    --foreground: 210 20% 94%; /* Slightly less bright white */
 
-    --card: 222.2 84% 6.9%; /* Slightly Lighter Dark Blue-Gray */
-    --card-foreground: 210 40% 98%;
+    --card: 220 30% 15%; /* Lighter card background */
+    --card-foreground: 210 20% 94%; /* Match foreground */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 30% 10%; /* Keep popover slightly darker */
+    --popover-foreground: 210 20% 94%; /* Match foreground */
 
-    --primary: 210 40% 98%; /* Almost White */
-    --primary-foreground: 222.2 47.4% 11.2%; /* Dark Blue-Gray */
+    --primary: 210 20% 94%; /* Match foreground */
+    --primary-foreground: 220 30% 20%; /* Ensure contrast */
 
-    --secondary: 217.2 32.6% 17.5%; /* Muted Blue */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 25% 25%; /* Lighter muted blue */
+    --secondary-foreground: 210 20% 94%; /* Match foreground */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%; /* Grayish Blue */
+    --muted: 215 25% 22%; /* Slightly darker muted */
+    --muted-foreground: 215 15% 65%; /* Lighter muted text */
 
-    --accent: 217.2 32.6% 25.5%; /* Slightly Brighter Muted Blue */
-    --accent-foreground: 210 40% 98%;
+    --accent: 215 25% 35%; /* Lighter accent blue */
+    --accent-foreground: 210 20% 98%; /* Keep accent text bright */
 
-    --destructive: 0 62.8% 30.6%; /* Dark Red */
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 60% 45%; /* Slightly lighter red */
+    --destructive-foreground: 210 20% 98%; /* Keep destructive text bright */
 
-    --border: 217.2 32.6% 17.5%; /* Muted Blue */
-    --input: 217.2 32.6% 17.5%;
-    --ring: 215 20.2% 65.1%; /* Grayish Blue for focus rings */
+    --border: 215 25% 22%; /* Match muted background */
+    --input: 215 25% 22%; /* Match muted background */
+    --ring: 215 20% 55%; /* Lighter ring color */
 
     --radius: 0.5rem;
 
-    /* Sidebar specific variables (assuming defaults match theme for now) */
-    --sidebar-background: 222.2 84% 4.9%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 210 40% 98%;
-    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
-    --sidebar-accent: 217.2 32.6% 25.5%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 215 20.2% 65.1%;
+    /* Sidebar specific variables updated to match new theme */
+    --sidebar-background: 220 30% 12%;
+    --sidebar-foreground: 210 20% 94%;
+    --sidebar-primary: 210 20% 94%;
+    --sidebar-primary-foreground: 220 30% 20%;
+    --sidebar-accent: 215 25% 35%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 25% 22%;
+    --sidebar-ring: 215 20% 55%;
   }
 
   /* Removed redundant .dark definition as it was identical to :root */
