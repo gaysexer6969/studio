@@ -1,5 +1,5 @@
 import { Section } from "./ui/section";
-import { FolderGit2, ArrowUpRight } from "lucide-react"; // Changed icon
+import { FolderGit2, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
@@ -24,12 +24,13 @@ export const Projects = () => {
     <Section id="projects" className="py-16 bg-transparent">
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center mb-8">
         <div className="flex flex-col items-center gap-2 text-center">
-          {/* Updated icon and ensure primary color */}
+          {/* Main section icon */}
           <FolderGit2 className="h-9 w-9 mb-2 text-primary" />
           <h2 className="text-2xl font-bold mb-1">Projects</h2>
-          <hr className="w-16 border-t border-border my-1 mx-auto" /> {/* Use border-border */}
+          <hr className="w-16 border-t border-border my-1 mx-auto" />
         </div>
       </div>
+      {/* Simplified grid layout for project cards */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center px-2">
         {projects.map((project) => (
           <a
@@ -37,18 +38,17 @@ export const Projects = () => {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-border rounded-md px-4 py-3 flex flex-col gap-2 transition-all duration-150 ease-in-out hover:bg-accent hover:border-accent-foreground hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-card-foreground" // Use theme colors
+            className="border border-border rounded-md px-4 py-3 flex flex-col gap-1 transition-all duration-150 ease-in-out hover:bg-accent hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-card-foreground group" // Use theme colors and add group for potential icon styling
           >
+            {/* Simplified project card content */}
             <div className="flex items-center justify-between">
-              <span className="flex items-center gap-2">
-                {/* Use same icon for consistency, primary color */}
-                <FolderGit2 className="w-4 h-4 text-primary opacity-80" />
-                <span className="font-semibold">{project.title}</span> {/* Inherits text color */}
-              </span>
-              {/* Keep ArrowUpRight, use muted-foreground */}
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground" />
+              {/* Removed redundant icon, Title only */}
+              <span className="font-semibold">{project.title}</span>
+              {/* External link icon, appears on hover/focus */}
+              <ArrowUpRight className="w-4 h-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </div>
-            <span className="text-muted-foreground text-sm">{project.description}</span> {/* Use muted-foreground */}
+            {/* Description */}
+            <span className="text-muted-foreground text-sm">{project.description}</span>
           </a>
         ))}
       </div>
