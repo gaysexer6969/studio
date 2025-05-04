@@ -8,10 +8,10 @@ export const Hero = () => {
   return (
     <Section className="min-h-screen flex flex-col justify-center items-center text-center space-y-8">
       <div className="space-y-6 animate-fade-in">
-        <h1 className="pb-3 text-center text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+        <h1 className="pb-3 text-center text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-gray-300 to-gray-500 bg-clip-text text-transparent">
           Nilay D. Shenai
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 font-light">
+        <p className="text-xl md:text-2xl text-muted-foreground font-light">
           A normal CS aficionado.
         </p>
       </div>
@@ -21,7 +21,7 @@ export const Hero = () => {
           variant="outline"
           size="lg"
           // Removed custom bg/border classes, relying on theme's outline variant
-          className="group text-white transform transition-all duration-300 hover:scale-105"
+          className="group text-foreground transform transition-all duration-300 hover:scale-105"
           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
         >
           Learn More
@@ -33,7 +33,7 @@ export const Hero = () => {
             variant="outline"
             size="icon"
             // Removed custom bg/border classes, relying on theme's outline variant
-            className="text-white transform transition-all duration-300 hover:scale-105"
+            className="text-foreground transform transition-all duration-300 hover:scale-105"
             asChild
           >
             <a href="https://github.com/NilayShenai" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
@@ -44,7 +44,7 @@ export const Hero = () => {
             variant="outline"
             size="icon"
             // Removed custom bg/border classes, relying on theme's outline variant
-            className="text-white transform transition-all duration-300 hover:scale-105"
+            className="text-foreground transform transition-all duration-300 hover:scale-105"
             asChild
           >
             <a href="https://www.linkedin.com/in/nilay-shenai-7b5211183/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
