@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    /* Slightly Lighter Dark Theme - Adjusted with Teal Accent for Hover Outline */
-    --background: 220 25% 16%; /* Adjusted: Slightly lighter start for gradient */
+    /* Slightly Darker Gradient Theme - Adjusted with Teal Accent for Hover Outline */
+    --background: 220 25% 14%; /* Adjusted: Darker start for gradient */
     --foreground: 210 20% 95%; /* Slightly brighter foreground */
 
-    --card: 220 25% 19%; /* Adjusted: Lighter card background */
+    --card: 220 25% 19%; /* Kept lighter card background */
     --card-foreground: 210 20% 95%; /* Match foreground */
 
-    --popover: 220 25% 10%; /* Adjusted: Darker popover, matches gradient end */
+    --popover: 220 25% 8%; /* Adjusted: Darker popover, matches gradient end */
     --popover-foreground: 210 20% 95%; /* Match foreground */
 
     --primary: 210 20% 95%; /* Match foreground */
@@ -38,7 +38,7 @@
     --radius: 0.5rem;
 
     /* Sidebar variables updated to match new theme */
-    --sidebar-background: 220 25% 16%; /* Adjusted: Match new background */
+    --sidebar-background: 220 25% 14%; /* Adjusted: Match new background */
     --sidebar-foreground: 210 20% 95%;
     --sidebar-primary: 210 20% 95%;
     --sidebar-primary-foreground: 220 25% 24%; /* Adjusted: Match new primary-foreground */
@@ -83,8 +83,8 @@
 
 /* Gradient for main background */
 .main-gradient {
-  /* Smooth gradient from lighter top (background) to slightly darker bottom */
-  @apply bg-gradient-to-b from-background to-[hsl(220,25%,10%)];
+  /* Smooth gradient from darker top (background) to slightly darker bottom */
+  @apply bg-gradient-to-b from-background to-[hsl(220,25%,8%)]; /* Adjusted gradient */
 }
 
 /* Ensure badge outline variant hover uses accent border */

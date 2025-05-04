@@ -516,14 +516,14 @@ video {
   display: none;
 }
   :root {
-    /* Slightly Lighter Dark Theme - Adjusted with Teal Accent for Hover Outline */
-    --background: 220 25% 16%; /* Adjusted: Slightly lighter start for gradient */
+    /* Slightly Darker Gradient Theme - Adjusted with Teal Accent for Hover Outline */
+    --background: 220 25% 14%; /* Adjusted: Darker start for gradient */
     --foreground: 210 20% 95%; /* Slightly brighter foreground */
 
-    --card: 220 25% 19%; /* Adjusted: Lighter card background */
+    --card: 220 25% 19%; /* Kept lighter card background */
     --card-foreground: 210 20% 95%; /* Match foreground */
 
-    --popover: 220 25% 10%; /* Adjusted: Darker popover, matches gradient end */
+    --popover: 220 25% 8%; /* Adjusted: Darker popover, matches gradient end */
     --popover-foreground: 210 20% 95%; /* Match foreground */
 
     --primary: 210 20% 95%; /* Match foreground */
@@ -550,7 +550,7 @@ video {
     --radius: 0.5rem;
 
     /* Sidebar variables updated to match new theme */
-    --sidebar-background: 220 25% 16%; /* Adjusted: Match new background */
+    --sidebar-background: 220 25% 14%; /* Adjusted: Match new background */
     --sidebar-foreground: 210 20% 95%;
     --sidebar-primary: 210 20% 95%;
     --sidebar-primary-foreground: 220 25% 24%; /* Adjusted: Match new primary-foreground */
@@ -1833,12 +1833,12 @@ video {
 
 /* Gradient for main background */
 .main-gradient {
-  /* Smooth gradient from lighter top (background) to slightly darker bottom */
+  /* Smooth gradient from darker top (background) to slightly darker bottom */
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: hsl(var(--background)) var(--tw-gradient-from-position);
   --tw-gradient-to: hsl(var(--background) / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: hsl(220,25%,10%) var(--tw-gradient-to-position);
+  --tw-gradient-to: hsl(220,25%,8%) var(--tw-gradient-to-position); /* Adjusted gradient */
 }
 
 /* Ensure badge outline variant hover uses accent border */
